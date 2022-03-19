@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit
  *                            and of course also stores dishes on the device using the ROOM Database to perform CRUD Operations
  *
  * Features                 : This app represent AddUpdate Activity, Main Activity, Splash Activity and
- *                            three feature fragments 1. All Dishes Fragment,
+ *                            four feature fragments  1. All Dishes Fragment,
  *                                                    2. Dish Details Fragment,
  *                                                    3. Favorite Dishes Fragment,
  *                                                    4  Random Dishes Fragment,
@@ -51,7 +51,8 @@ import java.util.concurrent.TimeUnit
  *                                                  5 Dish Cooking Time
  *                                                  6 Dish Directions to cook
  *                            MAIN ACTIVITY
- *                            This Activity is used to hide and show the bottom navigation view
+ *                            This Activity is used hold all of our fragment views and also
+ *                            to hide and show the bottom navigation view
  *                            and also to perform android notifications to the user of this app
  *
  *                            SPLASH ACTIVITY
@@ -155,7 +156,8 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_all_dishes, R.id.navigation_favorite_dishes, R.id.navigation_random_dish
+                R.id.navigation_all_dishes, R.id.navigation_favorite_dishes,
+                R.id.navigation_random_dish
             )
         )
         setupActionBarWithNavController(mNavController, appBarConfiguration)
@@ -167,7 +169,8 @@ class MainActivity : AppCompatActivity() {
             val notificationId = intent.getIntExtra(Constants.NOTIFICATION_ID, 0)
             Log.i("Notification Id", "$notificationId")
 
-            // The Random Dish Fragment is selected when user is redirect in the app via Notification.
+            // The Random Dish Fragment is selected when user is redirect
+            // in the app via Notification.
             binding.navView.selectedItemId = R.id.navigation_random_dish
         }// END
 
@@ -182,7 +185,8 @@ class MainActivity : AppCompatActivity() {
      * By adding requirements, you can make sure that work only runs in certain situations
      * - for example, when you have an unmetered network and are charging.
      */
-    // For more details visit the link https://medium.com/androiddevelopers/introducing-workmanager-2083bcfc4712
+    // For more details visit the link
+    // https://medium.com/androiddevelopers/introducing-workmanager-2083bcfc4712
     private fun createConstraints() = Constraints.Builder()
         .setRequiredNetworkType(NetworkType.NOT_REQUIRED)  // if connected to WIFI
         .setRequiresCharging(false)
@@ -200,12 +204,15 @@ class MainActivity : AppCompatActivity() {
      * You can also set the TimeUnit as per your requirement. for example SECONDS, MINUTES, or HOURS.
      */
     // setting period to 15 Minutes
-    private fun createWorkRequest() = PeriodicWorkRequestBuilder<NotifyWorker>(15,TimeUnit.MINUTES)
+    private fun createWorkRequest() = PeriodicWorkRequestBuilder<NotifyWorker>(
+        15,
+        TimeUnit.MINUTES)
         .setConstraints(createConstraints())
         .build()
 
-    /* enqueue a work, ExistingPeriodicWorkPolicy.KEEP means that if this work already exists, it will be kept
-     if the value is ExistingPeriodicWorkPolicy.REPLACE, then the work will be replaced */
+    /** enqueue a work, ExistingPeriodicWorkPolicy.KEEP means that if this work already exists,
+    it will be kept if the value is ExistingPeriodicWorkPolicy.REPLACE, then the work will be replaced
+    */
     private fun startWork(){
         WorkManager.getInstance(this)
             .enqueueUniquePeriodicWork("FavDish Notify Work",

@@ -41,7 +41,8 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
     private fun sendNotification() {
 
         // TODO Step 2: Add the notification id.
-        // In our case the notification id is 0. If you are dealing with dynamic functionality then you can have it as unique for every notification.
+        // In our case the notification id is 0. If you are dealing with dynamic functionality
+        // then you can have it as unique for every notification.
         val notification_id = 0
         // END
 
@@ -74,13 +75,15 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
         val bitmap = applicationContext.vectorToBitmap(R.drawable.ic_vector_logo)
         // END
 
-        // TODO Step 11: Create the style of the Notification. You can create the style as you want here we will create a notification using BigPicture. For Example InboxStyle() which is used for simple Text message.
+        // TODO Step 11: Create the style of the Notification. You can create the style as you want
+        // here we will create a notification using BigPicture. For Example InboxStyle() which is used for simple Text message.
         // START
         // The style of the Notification. You can create the style as you want here we will create a notification using BigPicture.
         // For Example InboxStyle() which is used for simple Text message.
         val bigPicStyle = NotificationCompat.BigPictureStyle()
             .bigPicture(bitmap)
-            .bigLargeIcon(null) // The null is passed to avoid the duplication of image when the notification is en-large from notification tray.
+            .bigLargeIcon(null) // The null is passed to avoid the duplication of image when
+        // the notification is en-large from notification tray.
         // END
 
         // TODO Step 12: Define the pending intent for Notification.
@@ -88,7 +91,8 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
         val pendingIntent = PendingIntent.getActivity(applicationContext, 0, intent, 0)
         // END
 
-        // TODO Step 13: Before building the Notification Builder add the notification icon. You can have look the note file where I have mentioned the step How to generate it.
+        // TODO Step 13: Before building the Notification Builder add the notification icon.
+        // You can have look the note file where I have mentioned the step How to generate it.
 
         // TODO Step 14: Now as we most of the required params so lets build the Notification Builder.
         // START
@@ -152,7 +156,8 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
         }
         // END
 
-        // TODO Step 17: Notify the user with Notification id and Notification builder using the NotificationManager instance that we have created.
+        // TODO Step 17: Notify the user with Notification id and Notification builder using the
+        //  NotificationManager instance that we have created.
         // START
         notificationManager.notify(notification_id, notification.build())
         // END
