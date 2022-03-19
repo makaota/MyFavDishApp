@@ -19,19 +19,20 @@ A must for any developer who wants to call himself a senior developer.
  and of course also stores dishes on the device using the ROOM Database to perform CRUD Operations
  
  # Features           
- This app represent AddUpdate Activity, Main Activity, Splash Activity and three feature fragments 
+ This app represent Splash Activity, Main Activity, AddUpdate Activity and four feature fragment views  
  1. All Dishes Fragment,
  2. Dish Details Fragment,
  3. Favorite Dishes Fragment,
- 4  Random Dishes Fragment,
+ 4. Random Dishes Fragment,
 
  # SPLASH ACTIVITY
  The splash animation is shown every time the app is opened\
- ![splash](https://user-images.githubusercontent.com/74915165/159081204-12872a00-a3f9-47bb-b3e0-16c153148e69.png)
+![splash screen_300x600](https://user-images.githubusercontent.com/74915165/159121250-b8fa71f1-e1cc-454c-b7f2-8b1250ba409c.png)
 
  
  # MAIN ACTIVITY
- This Activity is used to hide and show the bottom navigation view and also to perform android notifications to the user of this app
+  This Activity is used to hold all of our fragment views and also to hide and show the bottom navigation view and also to perform android notifications to the user of this app\
+  ![main3_727x600 (3)](https://user-images.githubusercontent.com/74915165/159120950-31530264-4951-41d1-9575-c897d6ff5249.png)
 
 
  # ADD UPDATE ACTIVITY
@@ -41,8 +42,8 @@ A must for any developer who wants to call himself a senior developer.
  3 Dish Category
  4 Dish Ingredients
  5 Dish Cooking Time
- 6 Dish Directions to cook
-
+ 6 Dish Directions to cook\
+![add dish_300x600](https://user-images.githubusercontent.com/74915165/159121225-786dbd2c-8e88-4c27-b3ab-1f414dc519b5.png)
 
 
 
@@ -52,22 +53,30 @@ A must for any developer who wants to call himself a senior developer.
  This Fragment also presents to the user a list of added dishes to our/local devices database
  each list is populated with a popup menu that lets the user to edit or delete the dish
  This Fragment uses navigation graphs to navigate to DISH DETAILS FRAGMENT to display dish details
- added to the database
+ added to the database\
+ ![all dishes_300x600](https://user-images.githubusercontent.com/74915165/159121276-b03ace9c-f691-42ef-b6b8-36f2148db7b6.png)
+
 
  # 2. DISH DETAILS FRAGMENT
  This Fragments displays the dish details to the user also let's the user to share the dish using share icon menu
  the user can choose to favorite/un-favorite the dish using heart icon
  if the user favorites the dish it will be displayed to the FAVORITE DISHES FRAGMENT
- This Fragment uses android palette to colorize the layout
+ This Fragment uses android palette to colorize the layout\
+ ![dish details_300x600](https://user-images.githubusercontent.com/74915165/159121291-848ccff4-0080-4794-9c81-66d00e8e9d6d.png)
+
 
  # 3. FAVORITE DISHES FRAGMENT
- This Fragment displays a list of all favorites dishes that when clicked navigates back to the DISH DETAILS FRAGMENT
+ This Fragment displays a list of all favorites dishes that when clicked navigates back to the DISH DETAILS FRAGMENT\
+ ![favorite dish_300x600](https://user-images.githubusercontent.com/74915165/159121303-c89f54ca-7222-4135-84ba-dedba4b9427f.png)
+
 
  # 4. RANDOM DISH FRAGMENT
  This Fragment uses spoonacular API to display random dishes to the user using our own dish details information, Uses Internet
  This Fragment also uses swipe to refresh to call the API for new random dish
  and the user can also choose to favorite the dish which will be added to the local database
- AND will be displayed inside the ALL DISHES FRAGMENT and FAVORITE DISHES FRAGMENT
+ AND will be displayed inside the ALL DISHES FRAGMENT and FAVORITE DISHES FRAGMENT\
+ ![random dish_300x600](https://user-images.githubusercontent.com/74915165/159121312-8449f75e-1539-452e-8b75-0b06a4f0f881.png)
+
 
 
 
