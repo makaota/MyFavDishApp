@@ -26,7 +26,7 @@
     <string name="title_select_dish_category">SELECT DISH CATEGORY</string>
     <string name="title_select_dish_cooking_time">SELECT COOKING TIME IN MINUTES</string>
 
-    <!--TODO Step 7: Define all the string values to the string.xml file-->
+
     <!--START-->
     <string name="err_msg_select_dish_image">Select dish image.</string>
     <string name="err_msg_enter_dish_title">Enter dish title.</string>
@@ -38,7 +38,7 @@
     <!--END-->
 
     <string name="label_no_dishes_added_yet">No favorite dishes added yet!!!</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
 
     <string name="title_dish_details">Dish Details</string>
 
@@ -57,19 +57,17 @@
 
     <string name="lbl_update_dish">UPDATE DISH</string>
 
-    <!--TODO Step 5: Add the string values to strings.xml-->
-    <!--START-->
+
     <string name="title_delete_dish">Delete Dish</string>
     <string name="msg_delete_dish_dialog">Are you sure you want to delete %1$s.</string>
     <string name="lbl_yes">Yes</string>
     <string name="lbl_no">No</string>
-    <!--END-->
 
-    <!--TODO Step 3: Add the string value to strings.xml-->
-    <!--START-->
+
+
     <string name="action_filter_dishes">Filter Dishes</string>
     <string name="title_select_item_to_filter">SELECT ITEM TO FILTER</string>
-    <!--END-->
+
     
     <string name="msg_already_added_to_favorites">you have already added the dish to your favorites</string>
     <string name="please_wait">Please Wait!</string>

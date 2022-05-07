@@ -163,7 +163,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(mNavController, appBarConfiguration)
         navView.setupWithNavController(mNavController)
 
-        // TODO Step 19: Handle the Notification when user clicks on it.
+        // Handle the Notification when user clicks on it.
         // START
         if (intent.hasExtra(Constants.NOTIFICATION_ID)) {
             val notificationId = intent.getIntExtra(Constants.NOTIFICATION_ID, 0)

@@ -71,7 +71,7 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
         FavDishViewModelFactory((application as FavDishApplication).repository)
     }
 
-    // TODO Step 1: Define the custom list dialog global and initialize it in the function as it is define previously.
+    // Define the custom list dialog global and initialize it in the function as it is define previously.
     // START
     // A global variable for the custom list dialog.
     private lateinit var mCustomListDialog: Dialog
@@ -121,7 +121,7 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
         mBinding.etCategory.setOnClickListener(this@AddUpdateDishActivity)
         mBinding.etCookingTime.setOnClickListener(this@AddUpdateDishActivity)
 
-        // TODO Step 5: Assign the click event to the Add Dish button.
+        // Assign the click event to the Add Dish button.
         // START
         mBinding.btnAddDish.setOnClickListener(this@AddUpdateDishActivity)
         // END
@@ -164,7 +164,7 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
                 return
             }
 
-            // TODO Step 6: Perform the action on button click.
+            // Perform the action on button click.
             // START
             R.id.btn_add_dish -> {
 
@@ -559,7 +559,7 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
      * @param selection - By passing this param you can identify the list item selection.
      */
     private fun customItemsListDialog(title: String, itemsList: List<String>, selection: String) {
-        // TODO Step 2: Replace the dialog variable with the global variable.
+        // Replace the dialog variable with the global variable.
         mCustomListDialog = Dialog(this@AddUpdateDishActivity)
 
         val binding: DialogCustomListBinding = DialogCustomListBinding.inflate(layoutInflater)
@@ -580,7 +580,7 @@ class AddUpdateDishActivity : AppCompatActivity(), View.OnClickListener {
         mCustomListDialog.show()
     }
 
-    // TODO Step 3: Create a function to set the selected item to the view.
+    // Create a function to set the selected item to the view.
     /**
      * A function to set the selected item to the view.
      *

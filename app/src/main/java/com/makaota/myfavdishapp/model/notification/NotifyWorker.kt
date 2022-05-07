@@ -25,7 +25,7 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
 
     override fun doWork(): Result {
 
-        // TODO Step 18: Call the function to trigger the notification when the doWork is called.
+        // Call the function to trigger the notification when the doWork is called.
         // START
         sendNotification()
         // END
@@ -33,20 +33,20 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
         return success()
     }
 
-    // TODO Step 1: Create a function to send the notification.
+    // Create a function to send the notification.
     // START
     /**
      * A function to send the notification.
      */
     private fun sendNotification() {
 
-        // TODO Step 2: Add the notification id.
+        // Add the notification id.
         // In our case the notification id is 0. If you are dealing with dynamic functionality
         // then you can have it as unique for every notification.
         val notification_id = 0
         // END
 
-        // TODO Step 4: Create an intent instance that we want to navigate the user when it is clicked.
+        // Create an intent instance that we want to navigate the user when it is clicked.
         // START
         val intent = Intent(applicationContext, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -54,7 +54,7 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
         intent.putExtra(Constants.NOTIFICATION_ID, notification_id)
         // END
 
-        // TODO Step 5: Create an instance of Notification Manager.
+        // Create an instance of Notification Manager.
         // START
         /**
          * Class to notify the user of events that happen.  This is how you tell
@@ -64,18 +64,18 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
             applicationContext.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         // END
 
-        // TODO Step 7: Define the Notification Title and SubTitle.
+        // Define the Notification Title and SubTitle.
         // START
         val titleNotification = applicationContext.getString(R.string.notification_title)
         val subtitleNotification = applicationContext.getString(R.string.notification_subtitle)
         // END
 
-        // TODO Step 10: Generate the bitmap from vector icon using the function that we have created.
+        // Generate the bitmap from vector icon using the function that we have created.
         // START
         val bitmap = applicationContext.vectorToBitmap(R.drawable.ic_vector_logo)
         // END
 
-        // TODO Step 11: Create the style of the Notification. You can create the style as you want
+        //Create the style of the Notification. You can create the style as you want
         // here we will create a notification using BigPicture. For Example InboxStyle() which is used for simple Text message.
         // START
         // The style of the Notification. You can create the style as you want here we will create a notification using BigPicture.
@@ -86,15 +86,15 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
         // the notification is en-large from notification tray.
         // END
 
-        // TODO Step 12: Define the pending intent for Notification.
+        // Define the pending intent for Notification.
         // START
         val pendingIntent = PendingIntent.getActivity(applicationContext, 0, intent, 0)
         // END
 
-        // TODO Step 13: Before building the Notification Builder add the notification icon.
+        // Before building the Notification Builder add the notification icon.
         // You can have look the note file where I have mentioned the step How to generate it.
 
-        // TODO Step 14: Now as we most of the required params so lets build the Notification Builder.
+        // Now as we most of the required params so lets build the Notification Builder.
         // START
         val notification =
             /**
@@ -123,12 +123,12 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
                 .setAutoCancel(true)
         // END
 
-        // TODO Step 15: Set the Priority fo the notification.
+        // Set the Priority fo the notification.
         // START
         notification.priority = NotificationCompat.PRIORITY_MAX
         // END
 
-        // TODO Step 16: Set channel ID for Notification if you are using the API level 26 or higher.
+        // Set channel ID for Notification if you are using the API level 26 or higher.
         // START
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notification.setChannelId(Constants.NOTIFICATION_CHANNEL)
@@ -156,7 +156,7 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
         }
         // END
 
-        // TODO Step 17: Notify the user with Notification id and Notification builder using the
+        // Notify the user with Notification id and Notification builder using the
         //  NotificationManager instance that we have created.
         // START
         notificationManager.notify(notification_id, notification.build())
@@ -164,7 +164,7 @@ class NotifyWorker(context:Context, workerParams: WorkerParameters): Worker(cont
     }
     // END
 
-    // TODO Step 9: Create a function that will convert the vector image to bitmap as below.
+    // Create a function that will convert the vector image to bitmap as below.
     // START
     /**
      * A function that will convert the vector image to bitmap as below.
